@@ -22,7 +22,7 @@ class OracleQueries:
         self.service_name = 'XEPDB1'
         self.sid = 'XE'
 
-        with open("conexion/passphrase/authentication.oracle", "r") as f:
+        with open("/home/labdatabase/Workplace/crud_mongo_escola-main/src/conexion/passphrase/authentication.oracle", "r") as f:
             self.user, self.passwd = f.read().split(',')            
 
     def __del__(self):
@@ -64,7 +64,7 @@ class OracleQueries:
 
         self.conn = cx_Oracle.connect(user=self.user,
                                       password=self.passwd,
-                                      dsn=self.connectionString()
+                                      dsn=self.connectionString(in_container=True)
                                      )
         self.cur = self.conn.cursor()
         return self.cur
