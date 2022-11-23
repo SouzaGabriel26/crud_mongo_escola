@@ -1,4 +1,4 @@
-# Projeto de CRUD em Python, fazendo conexão ao banco Oracle
+# Projeto de CRUD em Python, fazendo conexão ao banco MongoDB
 ## Sistema Escolar
 
 ### Bibliotecas Utilizadas (executar se for utilizar o sistema pela primeira vez)
