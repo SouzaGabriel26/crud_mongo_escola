@@ -1,6 +1,7 @@
 import pandas as pd
 from model.cursoEG import CursoEG
 from conexion.mongo_queries import MongoQueries
+from reports.relatorios import Relatorio
 
 
 class Controller_CursoEG:
@@ -11,6 +12,7 @@ class Controller_CursoEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
+        Relatorio.get_cursos()
         id_curso = input("id do curso (NOVO): ")
 
         # Verifica se o curso existe na base de dados
@@ -39,6 +41,7 @@ class Controller_CursoEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
+        Relatorio.get_cursos()
         id_curso = input("Id do curso que deseja atualizar os dados: ")
 
         # Verifica se o curso existe na base de dados
@@ -73,6 +76,7 @@ class Controller_CursoEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
+        Relatorio.get_cursos()
         id_curso = input("Id do curso que deseja excluir: ")
 
         # Verifica se o curso existe na base de dados

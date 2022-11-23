@@ -32,28 +32,20 @@ def inserir(opcao_inserir: int = 0):
 
 
 def atualizar(opcao_atualizar: int = 0):
-
     if opcao_atualizar == 1:
-        relatorio.get_alunos()
         aluno_atualizado = ctrl_aluno.atualizar_aluno()
     elif opcao_atualizar == 2:
-        relatorio.get_cursos()
         curso_atualizado = ctrl_curso.atualizar_curso()
     elif opcao_atualizar == 3:
-        relatorio.get_professores()
         professor_atualizado = ctrl_professor.atualiza_professor()
 
 
 def excluir(opcao_excluir: int = 0):
-
     if opcao_excluir == 1:
-        relatorio.get_alunos()
         ctrl_aluno.excluir_aluno()
     elif opcao_excluir == 2:
-        relatorio.get_cursos()
         ctrl_curso.excluir_curso()
     elif opcao_excluir == 3:
-        relatorio.get_professores()
         ctrl_professor.excluir_professor()
 
 

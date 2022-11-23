@@ -3,6 +3,7 @@ from model.cursoEG import CursoEG
 from controller.controller_cursoEG import Controller_CursoEG
 from conexion.mongo_queries import MongoQueries
 import pandas as pd
+from reports.relatorios import Relatorio
 
 
 class Controller_AlunoEG:
@@ -12,9 +13,10 @@ class Controller_AlunoEG:
 
     def inserir_aluno(self) -> AlunoEg:
 
-        # Cria uma nova conexão com o banco que permite alteração
+        # Cria uma no   va conexão com o banco que permite alteração
         self.mongo.connect()
 
+        Relatorio.get_alunos()
         # Solicita ao usuario o novo CPF
         cpf = input("CPF (NOVO): ")
 
@@ -49,6 +51,7 @@ class Controller_AlunoEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
+        Relatorio.get_alunos()
         # Solicita ao usuário o cpf do Aluno a ser alterado
         cpf = input("Cpf do aluno que deseja alterar os dados: ")
 
@@ -88,6 +91,7 @@ class Controller_AlunoEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
+        Relatorio.get_alunos()
         # Solicita ao usuário o cpf do aluno a ser excluído
         cpf = input("Cpf do aluno que deseja excluir: ")
 
