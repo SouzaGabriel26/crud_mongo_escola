@@ -12,15 +12,15 @@ class Relatorio:
         mongo = MongoQueries()
         mongo.connect()
         # Realiza uma consulta no mongo e retorna o cursor resultante para a variável
-        query_result = mongo.db['cursoEG'].aggregate([{
-            '$lookup': {'from': 'AlunosEG',
+        query_result = mongo.db.cursoEG.aggregate([{
+            '$lookup': {'from': 'cursoEG',
                         'localField': 'id_curso',
                         'foreignField': 'id_curso',
-                        'as': 'aluno'
+                        'as': 'curso'
                         }
         },
             {
-            '$unwind': {"path": "$aluno"}
+            '$unwind': {"path": "$alunosEG"}
         },
             {'$project': {'id_curso': 1,
                           'matricula': 1,

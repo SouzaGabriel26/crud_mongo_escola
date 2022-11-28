@@ -9,6 +9,8 @@ MENU_PRINCIPAL = """Menu Principal
 MENU_RELATORIOS = """Relatórios
 1 - Relatório de Alunos por curso
 2 - Relatório de Alunos
+3 - Relatório de Professores
+4 - Relatório de Cursos
 0 - Sair
 """
 

@@ -19,6 +19,10 @@ def reports(opcao_relatorio: int = 0):
         relatorio.get_relatorio_alunos_curso()
     elif opcao_relatorio == 2:
         relatorio.get_alunos()
+    elif opcao_relatorio == 3:
+        relatorio.get_professores()
+    elif opcao_relatorio == 4:
+        relatorio.get_cursos()
 
 
 def inserir(opcao_inserir: int = 0):
@@ -71,7 +75,7 @@ def run():
         elif opcao == 2:  # Inserir Novos Registros
 
             print(config.MENU_ENTIDADES)
-            opcao_inserir = int(input("Escolha uma opção [1-5]: "))
+            opcao_inserir = int(input("Escolha uma opção [1-3]: "))
             config.clear_console(1)
 
             inserir(opcao_inserir=opcao_inserir)
