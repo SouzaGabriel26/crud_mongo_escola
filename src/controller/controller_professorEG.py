@@ -5,6 +5,7 @@ from model.professoresEG import ProfessoresEG
 import pandas as pd
 from reports.relatorios import Relatorio
 
+relatorio = Relatorio()
 
 class Controller_ProfessorEG:
     def __init__(self):
@@ -15,7 +16,7 @@ class Controller_ProfessorEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
-        Relatorio.get_professores()
+        relatorio.get_professores()
         # Solicita ao usuário o id_professor que deseja inserir
         id_professor = int(input("Digite o id_professor (NOVO): "))
 
@@ -53,7 +54,7 @@ class Controller_ProfessorEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
-        Relatorio.get_professores()
+        relatorio.get_professores()
         # Solicita ao usuário o id_professor do professor a ser atualizado
         id_professor = int(
             input("id do professor que deseja alterar os dados: "))
@@ -92,7 +93,7 @@ class Controller_ProfessorEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
-        Relatorio.get_professores()
+        relatorio.get_professores()
         # Solicita ao usuário o id_professor que deseja excluir
         id_professor = int(input("Id do professor que deseja excluir: "))
 

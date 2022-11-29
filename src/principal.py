@@ -8,9 +8,9 @@ from controller.controller_professorEG import Controller_ProfessorEG
 
 tela_inicial = SplashScreen()
 relatorio = Relatorio()
-ctrl_aluno = Controller_AlunoEG
-ctrl_curso = Controller_CursoEG
-ctrl_professor = Controller_ProfessorEG
+ctrl_aluno = Controller_AlunoEG()
+ctrl_curso = Controller_CursoEG()
+ctrl_professor = Controller_ProfessorEG()
 
 
 def reports(opcao_relatorio: int = 0):

@@ -5,6 +5,7 @@ from conexion.mongo_queries import MongoQueries
 import pandas as pd
 from reports.relatorios import Relatorio
 
+relatorio = Relatorio()
 
 class Controller_AlunoEG:
     def __init__(self):
@@ -16,7 +17,7 @@ class Controller_AlunoEG:
         # Cria uma no   va conexão com o banco que permite alteração
         self.mongo.connect()
 
-        Relatorio.get_alunos()
+        relatorio.get_alunos()
         # Solicita ao usuario o novo CPF
         cpf = input("CPF (NOVO): ")
 
@@ -24,6 +25,7 @@ class Controller_AlunoEG:
             # Solicita os dados do novo aluno ao usuario
             matricula = input("Matricula: ")
             nome = input("Nome do Aluno: ")
+            relatorio.get_cursos()
             id_curso = input("id do curso: ")
 
             curso = self.valida_curso(id_curso)
@@ -51,7 +53,7 @@ class Controller_AlunoEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
-        Relatorio.get_alunos()
+        relatorio.get_alunos()
         # Solicita ao usuário o cpf do Aluno a ser alterado
         cpf = input("Cpf do aluno que deseja alterar os dados: ")
 
@@ -91,7 +93,7 @@ class Controller_AlunoEG:
         # Cria uma nova conexão com o banco que permite alteração
         self.mongo.connect()
 
-        Relatorio.get_alunos()
+        relatorio.get_alunos()
         # Solicita ao usuário o cpf do aluno a ser excluído
         cpf = input("Cpf do aluno que deseja excluir: ")
 
